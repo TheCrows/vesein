@@ -18,6 +18,6 @@ export default class App extends Vue {}
 <style lang="stylus">
 #pc-slider-section
   width: 100vw;
-  height: 33vw;
+  height: 38vw;
   position: relative;
 </style>

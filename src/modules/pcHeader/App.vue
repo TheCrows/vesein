@@ -1,22 +1,20 @@
 <template>
-  <div id="pc-slider-section">
-    <slider-section></slider-section>
+  <div id="pc-header">
+    header
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import SliderSection from './components/SliderSection.vue';
 
 @Component({
   components: {
-    SliderSection
   }
 })
 export default class App extends Vue {}
 </script>
 <style lang="stylus">
-#pc-slider-section
+#pc-header
   width: 100vw;
   height: 38vw;
   position: relative;

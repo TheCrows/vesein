@@ -7,7 +7,8 @@ module.exports = {
     },
     pages: {
         pcSliderSection: 'src/modules/pcSliderSection/main.ts',
-        pcHeader: 'src/modules/pcHeader/main.ts'
+        pcHeader: 'src/modules/pcHeader/main.ts',
+        pcFooter: 'src/modules/pcFooter/main.ts'
     },
     productionSourceMap: false,
     outputDir: 'dist',

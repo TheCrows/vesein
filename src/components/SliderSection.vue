@@ -26,7 +26,7 @@
 import { Component, Vue ,Prop } from 'vue-property-decorator';
 
 @Component
-export default class HelloWorld extends Vue {
+export default class SliderSection extends Vue {
   private currentIndex: number = 0;
   private lastIndex: number = 0;
   private showLast: boolean = false;

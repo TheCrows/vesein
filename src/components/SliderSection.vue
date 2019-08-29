@@ -8,7 +8,7 @@
                 'current-item': index === currentIndex,
                 'fade-item' : index === lastIndex
               }">
-          <img class="slider-img" :src="item.img_big" :alt="item.main_title">
+          <slot :data="item" :index="index"></slot>
         </div>
       </transition>
     </template>
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue ,Prop } from 'vue-property-decorator';
 
 @Component
 export default class HelloWorld extends Vue {
@@ -31,37 +31,9 @@ export default class HelloWorld extends Vue {
   private lastIndex: number = 0;
   private showLast: boolean = false;
   private timeOut: any = null;
-  private items: object[] = [
-    {
-      img_url: "https://media.gucci.com/content/HeroBigSmall_640x816/1563798603/HeroBigSmall_S93-FS-HERO-1955-01_001_Default.jpg",
-      img_big: "https://media.gucci.com/content/HeroBigStandard_1600x760/1563798603/HeroBigStandard_S93-FS-HERO-1955-01_001_Default.jpg",
-      main_title: "FALL WINTER 2019",
-      buttons: [{
-          text: "Shop now",
-          link: "/home"
-        }]
-    },
-    {
-      img_url: "https://media.gucci.com/content/HeroBigSmall_640x816/1562863509/HeroBigSmall_S93-FS-ADV-08_001_Default.jpg",
-      img_big: "https://media.gucci.com/content/HeroBigStandard_1600x760/1562863509/HeroBigStandard_S93-FS-ADV-08_001_Default.jpg",
-      main_title: "VESEIN ORIGINAL BAGS",
-      buttons: [{
-          text: "Shop WOMEN",
-          link: "/collections/shoulder-bag"
-        }]
-    },
-    {
-      img_url: "https://media.gucci.com/content/HeroBigSmall_640x816/1562746507/HeroBigSmall_S93-FS-HERO-07_001_Default.jpg",
-      img_big: "https://media.gucci.com/content/HeroBigStandard_1600x760/1562746507/HeroBigStandard_S93-FS-HERO-07_001_Default.jpg",
-      main_title: "WHATS NEW",
-      buttons: [{
-          text: "Shop NOW",
-          link: "/collections/totes"
-        }]
-    }
-  ];
 
-  
+  @Prop({required: true})
+  private items!: object[];
 
   private getLastIndex (currentIndex = this.currentIndex, total = this.items ? this.items.length : 1) {
     return currentIndex === 0 ? total - 1 : --currentIndex;
@@ -151,9 +123,6 @@ shown-outer-after()
       z-index 2 !important
     &.current-item
       z-index 1
-    .slider-img
-      min-height 100%
-      width 100%
   .selection-dot
     z-index 3 
     position absolute

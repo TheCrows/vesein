@@ -16,6 +16,6 @@ export default class App extends Vue {}
 <style lang="stylus">
 #pc-header
   width: 100vw;
-  height: 38vw;
+  height: 120px;
   position: relative;
 </style>

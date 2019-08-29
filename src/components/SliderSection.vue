@@ -34,6 +34,8 @@ export default class HelloWorld extends Vue {
 
   @Prop({required: true})
   private items!: object[];
+  @Prop({ default: 3000 })
+  private timeout!: number;
 
   private getLastIndex (currentIndex = this.currentIndex, total = this.items ? this.items.length : 1) {
     return currentIndex === 0 ? total - 1 : --currentIndex;
@@ -55,18 +57,14 @@ export default class HelloWorld extends Vue {
   private autoJump () {
     this.timeOut = setTimeout(() => {
       this.toPage(this.getNextIndex());
-    }, 3000)
+    }, this.timeout)
   }
-
   created() {
     this.autoJump();
   }
-
-
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 common-arrow(rotate)
   height 50px
@@ -91,13 +89,10 @@ shown-outer()
     left 50%
     position absolute
     transform translateX(-50%) translateY(-50%)
-
 shown-outer-after()
   &:after
     height 14px
     width 14px
-
-
 .slider-selection
   height 100%
   width 100%
@@ -149,6 +144,4 @@ shown-outer-after()
         shown-outer-after()
       &:hover
         shown-outer-after()
-        
-
 </style>

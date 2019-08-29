@@ -1,6 +1,6 @@
 <template>
   <div id="pc-slider-section">
-    <slider-section :items="items">
+    <slider-section :items="items" :timeout="4000">
       <template #default="{data, index}">
         <section class="slider-main-info">
           <div class="slider-main-title">{{data.main_title}}</div>

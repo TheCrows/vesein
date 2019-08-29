@@ -1,5 +1,5 @@
 <template>
-  <footer id="pc-footer">
+  <footer id="footer-section">
     footer
   </footer>
 </template>
@@ -10,11 +10,11 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({
   components: {}
 })
-export default class PcFooter extends Vue {
+export default class FooterDesktop extends Vue {
 
 }
 </script>
 <style lang="stylus">
-#pc-footer
+#footer-section
   background #000
 </style>

@@ -6,9 +6,9 @@ module.exports = {
         open: true, //配置自动启动浏览器
     },
     pages: {
-        pcSliderSection: 'src/modules/pcSliderSection/main.ts',
-        pcHeader: 'src/modules/pcHeader/main.ts',
-        pcFooter: 'src/modules/pcFooter/main.ts'
+        sliderDesktop: 'src/modules/sliderDesktop/main.ts',
+        headerDesktop: 'src/modules/headerDesktop/main.ts',
+        footerDesktop: 'src/modules/footerDesktop/main.ts'
     },
     productionSourceMap: false,
     outputDir: 'dist',

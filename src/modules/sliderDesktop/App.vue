@@ -1,5 +1,5 @@
 <template>
-  <div id="pc-slider-section">
+  <div id="slider-section">
     <slider-section :items="items" :timeout="4000">
       <template #default="{data, index}">
         <section class="slider-main-info">
@@ -25,7 +25,7 @@ import SliderSection from '../../components/SliderSection.vue';
     SliderSection
   }
 })
-export default class App extends Vue {
+export default class sliderDesktop extends Vue {
   private items: object[] = [
     {
       img_url: "https://media.gucci.com/content/HeroBigSmall_640x816/1563798603/HeroBigSmall_S93-FS-HERO-1955-01_001_Default.jpg",
@@ -58,7 +58,7 @@ export default class App extends Vue {
 }
 </script>
 <style lang="stylus">
-#pc-slider-section
+#slider-section
   width 100vw
   height 38vw
   position relative

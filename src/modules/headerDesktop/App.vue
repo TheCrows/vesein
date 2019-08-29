@@ -1,5 +1,5 @@
 <template>
-  <header id="pc-header" :style="{ background: currentColor.back }">
+  <header id="header-section" :style="{ background: currentColor.back }">
     <div class="header-top">
       <logo :color="currentColor.logo"></logo>
       <div class="header-left header-operate" :style="{ color: currentColor.icon }">
@@ -40,7 +40,7 @@ import Logo from './logo.vue';
     Logo
   }
 })
-export default class App extends Vue {
+export default class HeaderDesktop extends Vue {
   private menu_items: object[] = [{title: "title1", url: "/ti"}, {title: "title2", url: "/t2"}, {title: "title3", url: "/t3"}, {title: "title4", url: "/t4"}];
   private menu_dark: boolean = false;
 
@@ -79,7 +79,7 @@ export default class App extends Vue {
 }
 </script>
 <style lang="stylus">
-#pc-header
+#header-section
   width: 100vw;
   height: 120px;
   position: fixed;

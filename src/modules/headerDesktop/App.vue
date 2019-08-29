@@ -51,7 +51,7 @@ export default class HeaderDesktop extends Vue {
         logo: "#ffffff",
         icon: "#E5DFD9"
       };
-    } else if (location.pathname === "/" || location.pathname === "/cart"  || location.pathname === "/pcHeader") {
+    } else if (location.pathname === "/" || location.pathname === "/cart"  || location.pathname === "/headerDesktop") {
       return {
         back: "linear-gradient(to bottom, #25211e 0%, rgba(37,33,30,0) 100%)",
         logo: "#ffffff",

@@ -34,6 +34,18 @@ export default class productSlider extends Vue {
       this.currentIndex = nextPage;
       this.currentLeft = -(nextPage * currentWindowWidth * 3) / 5;
   }
+
+  private resizeFun () {
+       this.toPage(this.currentIndex);
+   }
+
+  created() {
+      window.addEventListener('resize', this.resizeFun);
+    }
+
+  beforeDestroy() {
+      window.removeEventListener('resize', this.resizeFun);
+  }
 }
 </script>
 
@@ -73,9 +85,8 @@ common-arrow(rotate)
             img
                 width 100%
     
-ul,ol,li{
+ul,ol,li
     list-style-type none
     padding 0
     margin 0
-}
 </style>

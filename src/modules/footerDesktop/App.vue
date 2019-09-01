@@ -49,13 +49,11 @@ export default class FooterDesktop extends Vue {
     margin 0 auto
     padding: 0 24px;
     font-family: 'FuturaLT-Book', 'GucciChinese';
-    font-size: 11px;
+    font-size: 12px;
     -webkit-transform: scale(0.91667, 0.91667);
     -moz-transform: scale(1);
     -webkit-transform-origin-x: 0;
     color: rgba(229, 223, 217, 0.5);
     letter-spacing: 0px;
-    /*margin-right: 2.7%;*/
-    font-weight: bold;
 
 </style>

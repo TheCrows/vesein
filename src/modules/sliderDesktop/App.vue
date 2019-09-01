@@ -70,17 +70,21 @@ export default class sliderDesktop extends Vue {
       transform translateY(-50%)
       text-align center
       .slider-main-title
-        font-size 40px
+        font-size 66px
         color #fff
-        margin-bottom 20px
+        margin-bottom 30px
+        letter-spacing 2px
+        font-weight 300
       .slider-main-butgroup a
         display inline-block
         line-height 40px
         font-size 12px
         padding 0 40px
         background #000
-        color #fff
+        color #e5dfd9
         text-decoration none
+        &:hover
+          background #313131
     .slider-img
       min-height 100%
       width 100%

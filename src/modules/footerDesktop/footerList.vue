@@ -40,4 +40,12 @@ export default class FooterList extends Vue {
             letter-spacing: 0;
             vertical-align: middle;
             margin-bottom: 13.4px;
+            cursor pointer
+            &:hover
+                color #fff
+            i
+                color rgba(229,223,217,0.5)
+                margin-right 8px
+                position relative
+                top 1px
 </style>

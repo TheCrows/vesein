@@ -48,11 +48,14 @@ export default class SliderSection extends Vue {
     this.timeOut = null;
     this.lastIndex = this.currentIndex;
     this.showLast = true;
-    this.currentIndex = nextPage;
+    setTimeout(() => {
+      this.currentIndex = nextPage;
     setTimeout(() => {
       this.showLast = false;
       this.autoJump();
     });
+    })
+    
   }
   private autoJump () {
     this.timeOut = setTimeout(() => {

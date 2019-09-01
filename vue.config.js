@@ -8,7 +8,8 @@ module.exports = {
     pages: {
         sliderDesktop: 'src/modules/sliderDesktop/main.ts',
         headerDesktop: 'src/modules/headerDesktop/main.ts',
-        footerDesktop: 'src/modules/footerDesktop/main.ts'
+        footerDesktop: 'src/modules/footerDesktop/main.ts',
+        productDesktop: 'src/modules/productDesktop/main.ts'
     },
     productionSourceMap: false,
     outputDir: 'dist',

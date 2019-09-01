@@ -8,7 +8,7 @@ export const footerConfig = {
         },{
             name: '免费礼包包装',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-shangwuzhongxin'
         }]
     },
     needHelp: {
@@ -70,15 +70,15 @@ export const footerConfig = {
         list: [{
             name: '微博',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-kefuzhongxin'
         },{
             name: '微信',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-chongwu'
         },{
             name: '优酷',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-bianlidian1'
         }]
     },
     callUs: {
@@ -86,11 +86,11 @@ export const footerConfig = {
         list: [{
             name: '在线顾问',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-chongwucesuo'
         },{
             name: '123.456.789.123',
             url: '/',
-            icon: 'iconfont icon-xiaochiba'
+            icon: 'iconfont icon-nancesuo'
         }]
     }
 };

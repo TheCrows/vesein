@@ -7,6 +7,7 @@
         </ul>
         <div class="last-but" @click="toPage(getNextIndex())"></div>
         <div class="next-but" @click="toPage(getLastIndex())"></div>
+        <div class="current-num">{{currentIndex + 1}} / {{items.length}}</div>
     </div>
 </template>
 
@@ -65,6 +66,7 @@ common-arrow(rotate)
     width 100%
     height calc(75.6vh + 120px)
     overflow hidden
+    position relative
     .last-but
         common-arrow(45)
         right 50px
@@ -84,6 +86,16 @@ common-arrow(rotate)
             display inline-block
             img
                 width 100%
+    .current-num
+        color: #999;
+        font-size: 10px;
+        font-weight: 400;
+        bottom: 30px;
+        position: absolute;
+        line-height: 24px;
+        font-size: 12px;
+        left 50%
+        transform translateX(-50%)
     
 ul,ol,li
     list-style-type none

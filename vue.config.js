@@ -9,7 +9,8 @@ module.exports = {
         sliderDesktop: 'src/modules/sliderDesktop/main.ts',
         headerDesktop: 'src/modules/headerDesktop/main.ts',
         footerDesktop: 'src/modules/footerDesktop/main.ts',
-        productDesktop: 'src/modules/productDesktop/main.ts'
+        productDesktop: 'src/modules/productDesktop/main.ts',
+        shoppingBagDesktop: 'src/modules/shoppingBagDesktop/main.ts'
     },
     productionSourceMap: false,
     outputDir: 'dist',

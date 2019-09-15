@@ -1,10 +1,12 @@
 <template>
     <div class="product-slider" ref="slider">
-        <ul class="item-contain" :style="{left: `${currentLeft}px`}">
+        <div class="slider-contain">
+           <ul class="item-contain" :style="{left: `${currentLeft}px`}">
             <li class="contain-item" :ref="'item_'+item.id" v-for="item in items" :key="item.id">
                 <img :src="item.image" alt="">
             </li>
-        </ul>
+        </ul> 
+        </div>
         <div class="last-but" @click="toPage(getNextIndex())"></div>
         <div class="next-but" @click="toPage(getLastIndex())"></div>
         <div class="current-num">{{currentIndex + 1}} / {{items.length}}</div>
@@ -65,8 +67,11 @@ common-arrow(rotate)
 .product-slider
     width 100%
     height calc(75.6vh + 120px)
-    overflow hidden
+    overflow-y visible
     position relative
+    .slider-contain
+        width 100%
+        overflow hidden
     .last-but
         common-arrow(45)
         right 50px
@@ -79,11 +84,15 @@ common-arrow(rotate)
         position relative
         margin-left -10vw
         transition left .3s
+        display flex
         .contain-item
             width 40vw
             padding-top 120px
             margin 0 10vw
             display inline-block
+            &:first-child
+                img 
+                    width 130%
             img
                 width 100%
     .current-num

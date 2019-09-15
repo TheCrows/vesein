@@ -20,8 +20,17 @@
         <div class="variants-pics">
           <img v-for="item in product.variant" :key="item.id" @click="currentVariant = item" :src="item.image" alt="">
         </div>
+        <div class="materials-care">
+          <div class="mc-title">MATERIALS AND CARE</div>
+          <div class="accordion-drawer" v-html="product.introduce.materialsAndCare"></div>
+        </div>
       </div>
-      <div class="product-right-detail">41324</div>
+      <div class="product-right-detail" >
+        <img class="produce-img" :src="currentVariant.image" alt="">
+        <p class="product-title">PRODUCT DETAILS</p>
+        <p class="product-name">{{currentVariant.name}}</p>
+        <div class="product-detail-info" v-html="product.introduce.data"></div>
+      </div>
     </section>
   </div>
 </template>
@@ -41,10 +50,10 @@ export default class productDesktop extends Vue {
     price: "100",
     id: "123456663",
     images: [
+      "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1555353003/550154_0OLFX_8277_005_100_0000_Light-GG.jpg",
       "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1551807021/550154_0OLFX_8277_001_063_0000_Light-GG.jpg", 
       "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1551807021/550154_0OLFX_8277_002_063_0000_Light-GG.jpg", 
       "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1551807022/550154_0OLFX_8277_003_063_0000_Light-GG.jpg", 
-      "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1555353003/550154_0OLFX_8277_005_100_0000_Light-GG.jpg",
       "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1560442506/587866_1GZ0X_3154_009_067_0000_Light-Soft-leather-backpack.jpg",
       "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1560442505/587866_1GZ0X_3154_003_067_0000_Light-Soft-leather-backpack.jpg"
       ],
@@ -63,12 +72,31 @@ export default class productDesktop extends Vue {
         name: "blue leather"
       },
       {
-        id: "2342344454",
+        id: "23423444541",
         color: "gray",
         image: "https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1560442505/587866_1GZ0X_3154_003_067_0000_Light-Soft-leather-backpack.jpg",
         name: "gray leather"
       }
-    ]
+    ],
+    introduce: {
+      data: `<p>The messenger bag is reimagined for Pre-Fall 2019 with the season's newest iteration of the GG pattern, printed with leaping tigers scattered across the black and grey GG Supreme base. Finished with a front zipper pocket and a blue and red Web strap that can be adjusted to be worn on the shoulder or cross body.</p>
+              <ul>
+                <li>Black/grey GG Supreme canvas with tigers print, a material with low environmental impact </li>
+                <li>Black leather trim</li>
+                <li>Palladium-toned hardware </li>
+                <li>Blue and red Web strap</li>
+                <li>Gucci trademark leather tag detail</li>
+                <li>Front zipper pocket </li>
+                <li>Interior zipper and smartphone pockets </li>
+                <li>Adjustable nylon strap with 20.5" drop and leather shoulder pad</li>
+                <li>Zipper closure </li>
+                <li>10.5"W x 11"H x 2"D</li>
+                <li>Cotton linen lining</li>
+                <li>Made in Italy </li>
+                <li>The model is 6'2" tall</li>
+              </ul>`,
+        materialsAndCare: `<p>Gucci products are made with carefully selected materials. Please handle with care for longer product life.</p><ul><li>Protect from direct light, heat and rain. Should it become wet, dry it immediately with a soft cloth</li><li>Fill the bag with tissue paper to help maintain its shape and absorb humidity, and store in the provided flannel bag</li><li>Do not carry heavy products that may affect the shape of the bag</li><li>Clean with a soft, dry cloth</li></ul><p></p>`
+    },
   };
 
   private currentVariant: object = this.product.variant[0];
@@ -84,10 +112,30 @@ export default class productDesktop extends Vue {
 }
 </script>
 <style lang="stylus">
+common-par()
+  display: inline-block;
+  padding-right: 0;
+  padding-left: 0;
+  float: left;
+  overflow: hidden;
+  font-size 12px
+  color #4b4b4b
+  ul
+    list-style: disc;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    li  
+      list-style: disc;
+      display: list-item;
+      text-align: -webkit-match-parent;
+
 #product-section
   color #000
   position relative
   background rgb(231,231,231)
+  .product-slider
+    z-index 1
   .product-into
     width 20vw
     padding-top: 14px;
@@ -96,6 +144,7 @@ export default class productDesktop extends Vue {
     left 50%
     transform translateX(-50%)
     text-align center
+    z-index 2
     .divider
       height: 1px;
       background-color: #c8c6c5;
@@ -174,9 +223,31 @@ export default class productDesktop extends Vue {
     box-sizing border-box
     background: rgba(255,255,255,0.8);
     display flex
+    z-index 3
+    position relative
     .variants-choose
       color: #1b1b1b;
-      width 60%
+      width 70%
+      .materials-care
+        margin-top 20px
+        line-height 26px
+        padding 0 22px
+        .mc-title
+          border-top: 1px solid #c8c6c5;
+          color: #1b1b1b;
+          cursor: pointer;
+          padding: 30px 0px 10px;
+          position: relative;
+          text-transform: uppercase;
+          font-size: 12px;
+          line-height: 1;
+          letter-spacing: initial;
+          font-variant-ligatures: none;
+          font-weight: 400;
+          font-style: normal;
+        .accordion-drawer
+          font-size 12px
+          common-par()
       .variants-title
         font-size: 12px;
         letter-spacing: initial;
@@ -198,4 +269,26 @@ export default class productDesktop extends Vue {
     .product-right-detail      
       flex-grow 1
       background #fff
+      width 30%
+      display flex
+      flex-direction column
+      padding 20px 22px
+      line-height 26px
+      p
+        margin 0
+      .product-title
+        color: #1b1b1b;
+        border-top: none;
+        padding: 0 0 15px;
+        pointer-events: none;
+      .produce-img
+        margin 10px auto 24px
+        max-width 200px
+      .product-detail-info
+        common-par()
+      .product-name
+        display: block;
+        font-size: 12px;
+        margin: 0 0 20px;
+        color: #999;
 </style>

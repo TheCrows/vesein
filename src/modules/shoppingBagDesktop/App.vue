@@ -8,6 +8,7 @@
         <div class="shopping-bag-content">
           <div class=shopping-bag-column>
             <h2 class="eyebrow">eyebrow</h2>
+            <bag-item></bag-item>
           </div>
           <div class="order-summary">
             <div class="order-details-summary">
@@ -32,9 +33,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import BagItem from './BagItem.vue';
 
 @Component({
-  components: {}
+  components: {BagItem}
 })
 export default class shoppingBagDesktop extends Vue {
   private summaryData: any={

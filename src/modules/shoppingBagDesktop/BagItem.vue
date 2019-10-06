@@ -69,7 +69,7 @@ export default class shoppingBagDesktop extends Vue {
                 ()=>{func.apply(context, restArg)} //修复
             , wait)
         }
-    };
+    }
     private handleNumChange: any;
     private numChange (type: string, caseItem: any){
         type === 'add' ? caseItem.num++ : caseItem.num--

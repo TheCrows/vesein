@@ -28,15 +28,19 @@
         </div>
       </div>
     </div>
+    <recommend></recommend>
+        <recommend type="recent"></recommend>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import BagItem from './BagItem.vue';
+import Recommend from '../../components/Recommend.vue';
 
 @Component({
-  components: {BagItem}
+  components: {BagItem, Recommend}
 })
 export default class shoppingBagDesktop extends Vue {
   private summaryData: any={

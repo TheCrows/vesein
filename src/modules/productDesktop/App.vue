@@ -32,16 +32,22 @@
         <div class="product-detail-info" v-html="product.introduce.data"></div>
       </div>
     </section>
+    <recommend></recommend>
+    <recommend type="recent"></recommend>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import ProductSlider from '../../components/productSlider.vue';
+import Recommend from '../../components/Recommend.vue';
+
 
 @Component({
   components: {
-    ProductSlider
+    ProductSlider,
+    Recommend
   }
 })
 export default class productDesktop extends Vue {
